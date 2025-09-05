@@ -330,7 +330,7 @@ body {
 }
 .v341_72 {
   width: 100%;
-  height: 384px;
+  height: 550px;
   background: url("../images/v341_72.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -344,17 +344,16 @@ body {
 .v341_73 {
   width: 234px;
   height: 38px;
-  background: rgba(15,173,172,0.10000000149011612);
+  background: rgba(15,173,172,0.1);
   opacity: 1;
   position: absolute;
   top: 0px;
-  left: 543px;
-  border-top-left-radius: 111px;
-  border-top-right-radius: 111px;
-  border-bottom-left-radius: 111px;
-  border-bottom-right-radius: 111px;
+  left: 50%;
+  transform: translateX(-50%); /* 👈 centra el elemento */
+  border-radius: 111px;
   overflow: hidden;
 }
+
 .v341_74 {
   width: 213px;
   color: rgba(15,173,172,1);
@@ -383,7 +382,7 @@ body {
 }
 .v341_76 {
   width: 336px;
-  height: 218px;
+  height: 300px;
   background: url("../images/v341_76.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -555,7 +554,7 @@ body {
 }
 .v341_91 {
   width: 336px;
-  height: 218px;
+  height: 300px;
   background: url("../images/v341_91.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -693,18 +692,18 @@ body {
   left: 24px;
 }
 .v341_104 {
-  width: 211px;
+  width: 310px;
   height: 28px;
-  background: url("../images/v341_104.png");
-  background-repeat: no-repeat;
-  background-position: center center;
+  background: url("../images/v341_104.png") no-repeat center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
   top: 120px;
-  left: 62px;
+  left: 50%;
+  transform: translateX(-50%); /* 👈 esto lo centra horizontalmente */
   overflow: hidden;
 }
+
 .v341_105 {
   width: 273px;
   color: rgba(11,26,51,1);
@@ -744,7 +743,7 @@ body {
 }
 .v341_108 {
   width: 336px;
-  height: 218px;
+  height: 300px;
   background: url("../images/v341_108.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -860,18 +859,18 @@ body {
   left: 10px;
 }
 .v341_119 {
-  width: 170px;
+  width: 220px;
   height: 28px;
-  background: url("../images/v341_119.png");
-  background-repeat: no-repeat;
-  background-position: center center;
+  background: url("../images/v341_119.png") no-repeat center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
   top: 120px;
-  left: 82px;
+  left: 50%;
+  transform: translateX(-50%); /* 👈 centra horizontalmente */
   overflow: hidden;
 }
+
 .v341_120 {
   width: 199px;
   color: rgba(11,26,51,1);
@@ -7073,4 +7072,96 @@ body {
   .v341_518 {
     top: 2308px !important;
   }
+}
+
+
+/* Centrar la sección "¿Por qué elegirnos?" */
+.v341_72 {
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 1320px !important;
+    max-width: calc(100vw - 120px) !important;
+}
+
+/* Centrar el título principal */
+.v341_75 {
+    position: absolute !important;
+    top: 54px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    text-align: center !important;
+}
+
+/* Posicionar las tres tarjetas centradas horizontalmente */
+.v341_76 { /* Todo en Uno */
+    left: 92px !important;
+}
+
+.v341_91 { /* Facilidad de Contratación */
+    left: 452px !important;
+}
+
+.v341_108 { /* Soporte Especializado */
+    left: 812px !important;
+}
+
+/* Responsive para tablets */
+@media (max-width: 1200px) {
+    .v341_72 {
+        width: 900px !important;
+    }
+    
+    /* 2 columnas centradas */
+    .v341_76 {
+        left: 66px !important;
+    }
+    
+    .v341_91 {
+        left: 418px !important;
+    }
+    
+    .v341_108 {
+        left: 66px !important;
+        top: 550px !important;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .v341_72 {
+        width: 456px !important;
+    }
+    
+    /* Una columna centrada */
+    .v341_76, .v341_91, .v341_108 {
+        left: 20px !important;
+        width: 336px !important;
+    }
+    
+    .v341_91 {
+        top: 450px !important;
+    }
+    
+    .v341_108 {
+        top: 850px !important;
+    }
+}
+
+/* Mejorar el espaciado interno de las tarjetas */
+.v341_76, .v341_91, .v341_108 {
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+/* Centrar los títulos de las tarjetas */
+.v341_87, .v341_104, .v341_119 {
+    text-align: center !important;
+}
+
+/* Centrar la descripción de las tarjetas */
+.v341_89, .v341_106, .v341_121 {
+    text-align: center !important;
+    padding: 0 10px !important;
 }
