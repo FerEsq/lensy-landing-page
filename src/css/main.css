@@ -2722,19 +2722,8 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v341_283 {
-  width: 446px;
-  height: 64px;
-  background: url("../images/v341_283.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 210px;
-  left: 80px;
-  overflow: hidden;
-}
+
+
 .v341_284 {
   width: 446px;
   height: 64px;
@@ -2749,19 +2738,126 @@ body {
   border-bottom-right-radius: 111px;
   overflow: hidden;
 }
-.v341_285 {
-  width: 406px;
-  height: 20px;
-  background: url("../images/v341_285.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
+
+
+/* Contenedor principal del formulario - restaurar posicionamiento */
+.v341_283 {
+  width: 446px;
+  height: 64px;
+  background: rgba(251,248,246,1);
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  box-sizing: border-box;
   position: absolute;
-  top: 22px;
-  left: 20px;
+  top: 210px;
+  left: 80px;
   overflow: hidden;
 }
+
+/* Input de email - eliminar línea de validación */
+.v341_285 {
+  flex: 1;
+  height: 54px;
+  background: transparent;
+  border: none;
+  border-bottom: none !important; /* Elimina cualquier borde inferior */
+  outline: none;
+  color: rgba(9,93,106,1);
+  font-family: Outfit;
+  font-weight: Regular;
+  font-size: 16px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.v341_285::placeholder {
+  color: rgba(9,93,106,0.7);
+}
+
+/* Eliminar todas las validaciones visuales del borde */
+.v341_285:invalid:not(:placeholder-shown),
+.v341_285:valid:not(:placeholder-shown),
+.v341_285:invalid,
+.v341_285:valid {
+  border-bottom: none !important;
+}
+
+.v341_285::placeholder {
+  color: rgba(9,93,106,0.7);
+}
+
+/* Botón suscríbete */
+.v341_287 {
+  width: 139px;
+  height: 54px;
+  background: rgba(184,97,97,1);
+  border: none;
+  border-radius: 27px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.v341_287:hover {
+  background: rgba(164,77,77,1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(184,97,97,0.3);
+}
+
+.v341_287:active {
+  transform: translateY(0);
+}
+
+/* Texto del botón */
+.v341_289 {
+  color: rgba(251,248,246,1);
+  font-family: Outfit;
+  font-weight: Medium;
+  font-size: 18px;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+/* Eliminar el div decorativo que puede interferir */
+.v341_288 {
+  display: none;
+}
+
+/* Validación */
+.v341_285:invalid:not(:placeholder-shown) {
+  color: #ff6b6b;
+}
+
+.v341_285:valid:not(:placeholder-shown) {
+  color: #51cf66;
+}
+
+/* Mensajes de estado */
+.error-message, .success-message {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  font-size: 14px;
+  font-family: Outfit;
+  font-weight: Regular;
+}
+
+.error-message {
+  color: #ff6b6b;
+}
+
+.success-message {
+  color: #51cf66;
+}
+
+
 .v341_286 {
   width: 216px;
   color: rgba(9,93,106,1);
@@ -2774,49 +2870,8 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v341_287 {
-  width: 139px;
-  height: 54px;
-  background: url("../images/v341_287.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 5px;
-  left: 301px;
-  border-top-left-radius: 111px;
-  border-top-right-radius: 111px;
-  border-bottom-left-radius: 111px;
-  border-bottom-right-radius: 111px;
-  overflow: hidden;
-}
-.v341_288 {
-  width: 139px;
-  height: 54px;
-  background: rgba(184,97,97,1);
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
-  border-bottom-left-radius: 9px;
-  border-bottom-right-radius: 9px;
-  overflow: hidden;
-}
-.v341_289 {
-  width: 108px;
-  color: rgba(251,248,246,1);
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  font-family: Outfit;
-  font-weight: Medium;
-  font-size: 18px;
-  opacity: 1;
-  text-align: center;
-}
+
+
 .v341_290 {
   width: 270px;
   height: 270px;

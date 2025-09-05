@@ -422,14 +422,12 @@
             <!-- Email Subscription Form -->
             <div class="v341_283">
                 <div class="v341_284">
-                    <div class="v341_285">
-                        <span class="v341_286">Ingresa tu correo electrónico</span>
-                    </div>
+                    <input type="email" id="emailInput" class="v341_285" placeholder="Ingresa tu correo electrónico" required>
                 </div>
-                <div class="v341_287">
+                <button type="button" class="v341_287" onclick="handleSubscription()">
                     <div class="v341_288"></div>
-                    <span class="v341_289">suscríbete</span>
-                </div>
+                    <span class="v341_289">SUSCRÍBETE</span>
+                </button>
             </div>
 
             <!-- Discount Offers -->
@@ -897,5 +895,92 @@
                 </a>
         </div>
     </div>
+
+<script>
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function handleSubscription() {
+    const emailInput = document.getElementById('emailInput');
+    const email = emailInput.value.trim();
+    
+    // Verificar si el campo está vacío
+    if (!email) {
+        alert('Por favor ingresa tu correo electrónico');
+        emailInput.focus();
+        return;
+    }
+    
+    // Validar formato del email
+    if (!validateEmail(email)) {
+        alert('Por favor ingresa un correo electrónico válido');
+        emailInput.focus();
+        return;
+    }
+    
+    // Enviar a Google Sheets
+    saveEmailToSheet(email);
+}
+
+async function saveEmailToSheet(email) {
+    // REEMPLAZA 'TU_SCRIPT_ID' con el ID real de tu script
+    const SHEET_URL = 'https://script.google.com/macros/s/AKfycbz5sYjv6uKCh1h98f4x9Hts96oLwrUJUmDfFqsJjkXmXMNasV_oQjv94Ae24HttOBND/exec';
+    
+    // Deshabilitar el botón durante el envío
+    const button = document.querySelector('.v341_287');
+    const originalText = button.querySelector('.v341_289').textContent;
+    button.querySelector('.v341_289').textContent = 'ENVIANDO...';
+    button.disabled = true;
+    
+    try {
+        const response = await fetch(SHEET_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: email,
+                timestamp: new Date().toISOString(),
+                source: 'lensy-landing'
+            })
+        });
+        
+        console.log('Correo enviado:', email);
+        alert('¡Gracias por suscribirte! Correo registrado correctamente.');
+        document.getElementById('emailInput').value = '';
+        
+    } catch (error) {
+        console.error('Error al guardar:', error);
+        alert('Error al procesar tu suscripción. Por favor intenta de nuevo.');
+    } finally {
+        // Restaurar el botón
+        button.querySelector('.v341_289').textContent = originalText;
+        button.disabled = false;
+    }
+}
+
+// Permitir envío con Enter
+document.getElementById('emailInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        handleSubscription();
+    }
+});
+
+// Validación en tiempo real mientras escribe
+document.getElementById('emailInput').addEventListener('input', function(e) {
+    const email = e.target.value.trim();
+    if (email && !validateEmail(email)) {
+        e.target.style.borderBottom = '2px solid #ff6b6b';
+    } else if (email && validateEmail(email)) {
+        e.target.style.borderBottom = '2px solid #51cf66';
+    } else {
+        e.target.style.borderBottom = 'none';
+    }
+});
+</script>
+
 </body>
 </html>
