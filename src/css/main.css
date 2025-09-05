@@ -3127,13 +3127,15 @@ body {
   color: rgba(251,248,246,1);
   position: absolute;
   top: 15px;
-  left: 4px;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: Outfit;
-  font-weight: ExtraBold;
+  font-weight: 800; /* ExtraBold */
   font-size: 18px;
   opacity: 1;
   text-align: center;
 }
+
 .v341_312 {
   width: 696px;
   height: 570px;
@@ -4751,7 +4753,6 @@ body {
 .v341_435 {
   width: 52px;
   height: 52px;
-  background: rgba(255,255,255,1);
   opacity: 1;
   position: absolute;
   top: 19px;
@@ -4917,7 +4918,6 @@ body {
 .v341_450 {
   width: 52px;
   height: 52px;
-  background: rgba(255,255,255,1);
   opacity: 1;
   position: absolute;
   top: 19px;
@@ -5098,7 +5098,6 @@ body {
 .v341_466 {
   width: 52px;
   height: 52px;
-  background: rgba(255,255,255,1);
   opacity: 1;
   position: absolute;
   top: 19px;
@@ -5302,7 +5301,6 @@ body {
 .v341_485 {
   width: 52px;
   height: 52px;
-  background: rgba(255,255,255,1);
   opacity: 1;
   position: absolute;
   top: 19px;
@@ -5443,7 +5441,7 @@ body {
   overflow: hidden;
 }
 .v341_499 {
-  width: 289px;
+  width: 320px;
   color: rgba(11,26,51,1);
   position: absolute;
   top: 4px;
@@ -5497,7 +5495,6 @@ body {
 .v341_503 {
   width: 52px;
   height: 52px;
-  background: rgba(255,255,255,1);
   opacity: 1;
   position: absolute;
   top: 19px;
@@ -5620,7 +5617,7 @@ body {
   left: 1px;
 }
 .v341_515 {
-  width: 400px;
+  width: 500px;
   height: 50px;
   background: url("../images/v341_515.png");
   background-repeat: no-repeat;
@@ -5633,7 +5630,7 @@ body {
   overflow: hidden;
 }
 .v341_516 {
-  width: 245px;
+  width: 300px;
   color: rgba(11,26,51,1);
   position: absolute;
   top: 4px;
@@ -5687,7 +5684,6 @@ body {
 .v341_520 {
   width: 52px;
   height: 52px;
-  background: rgba(255,255,255,1);
   opacity: 1;
   position: absolute;
   top: 19px;
@@ -6863,17 +6859,15 @@ body {
 .v341_621 {
   width: 162px;
   height: 57px;
-  background: rgba(255,255,255,0.10000000149011612);
+  background: rgba(255,255,255,0.1);
   opacity: 1;
   position: absolute;
   top: 71px;
-  left: 1206px;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  right: 28px; /* 👈 ahora se controla la separación del borde derecho */
+  border-radius: 30px;
   overflow: hidden;
 }
+
 .v341_622 {
   width: 31px;
   height: 24px;
@@ -6944,10 +6938,139 @@ body {
   color: rgba(255,255,255,1);
   position: absolute;
   top: 16px;
-  left: 28px;
+  right: 28px; /* 👈 margen desde el borde derecho */
   font-family: Outfit;
-  font-weight: Regular;
+  font-weight: 400; /* Regular */
   font-size: 18px;
   opacity: 1;
   text-align: center;
+}
+
+/* Corrección final para centrar features con espaciado adecuado */
+
+/* Mantener el contenedor centrado */
+.v341_429 {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 1320px !important;
+  max-width: calc(100vw - 40px) !important;
+}
+
+/* Agregar padding y separación entre las features */
+.v341_433, .v341_448, .v341_464, .v341_483, .v341_501, .v341_518 {
+  padding: 24px !important;
+  box-sizing: border-box !important;
+}
+
+/* Posiciones centradas con espaciado óptimo para 3 columnas */
+/* Fila superior */
+.v341_433 { /* Plataforma Todo en Uno */
+  left: 92px !important;
+}
+
+.v341_448 { /* Curación Inteligente */
+  left: 452px !important;
+}
+
+.v341_464 { /* Contratos con IA */
+  left: 812px !important;
+}
+
+/* Fila inferior */
+.v341_483 { /* Gestión de Pagos Seguros */
+  left: 92px !important;
+}
+
+.v341_501 { /* Portafolio Profesional */
+  left: 452px !important;
+}
+
+.v341_518 { /* Comunicación Integrada */
+  left: 812px !important;
+}
+
+/* Espaciado interno mejorado */
+.v341_447, .v341_463, .v341_482, .v341_500, .v341_517, .v341_534 {
+  padding: 0 12px !important;
+  margin-top: 12px !important;
+}
+
+/* Espaciado de títulos */
+.v341_446, .v341_462, .v341_481, .v341_499, .v341_516, .v341_533 {
+  margin-bottom: 12px !important;
+  padding: 0 12px !important;
+}
+
+/* Espaciado de iconos */
+.v341_434, .v341_449, .v341_465, .v341_484, .v341_502, .v341_519 {
+  margin-bottom: 20px !important;
+}
+
+/* Responsive para tablets */
+@media (max-width: 1200px) {
+  .v341_429 {
+    width: 900px !important;
+  }
+  
+  /* 2 columnas centradas */
+  .v341_433 { /* Plataforma Todo en Uno */
+    left: 66px !important;
+  }
+  
+  .v341_448 { /* Curación Inteligente */
+    left: 418px !important;
+  }
+  
+  .v341_464 { /* Contratos con IA */
+    left: 66px !important;
+    top: 652px !important;
+  }
+  
+  .v341_483 { /* Gestión de Pagos Seguros */
+    left: 418px !important;
+    top: 652px !important;
+  }
+  
+  .v341_501 { /* Portafolio Profesional */
+    left: 66px !important;
+    top: 1066px !important;
+  }
+  
+  .v341_518 { /* Comunicación Integrada */
+    left: 418px !important;
+    top: 1066px !important;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .v341_429 {
+    width: 456px !important;
+  }
+  
+  /* Una columna centrada */
+  .v341_433, .v341_448, .v341_464, .v341_483, .v341_501, .v341_518 {
+    left: 20px !important;
+    width: 416px !important;
+  }
+  
+  .v341_448 {
+    top: 652px !important;
+  }
+  
+  .v341_464 {
+    top: 1066px !important;
+  }
+  
+  .v341_483 {
+    top: 1480px !important;
+  }
+  
+  .v341_501 {
+    top: 1894px !important;
+  }
+  
+  .v341_518 {
+    top: 2308px !important;
+  }
 }
