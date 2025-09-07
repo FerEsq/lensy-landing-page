@@ -3218,16 +3218,15 @@ body {
 .v341_318 {
   width: 100%;
   height: 560px;
-  background: url("../images/v341_318.png");
-  background-repeat: no-repeat;
-  background-position: center center;
+  background: url("../images/v341_318.png") no-repeat center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
   top: 100px;
-  left: 60px;
+  left: 0; /* 👈 ocupa todo el ancho */
   overflow: hidden;
 }
+
 .v341_319 {
   width: 153px;
   height: 38px;
@@ -3521,8 +3520,8 @@ body {
   overflow: hidden;
 }
 .v341_341 {
-  width: 132px;
-  height: 20px;
+  width: 200px;
+  height: 30px;
   background: url("../images/v341_341.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -3602,8 +3601,8 @@ body {
   overflow: hidden;
 }
 .v341_347 {
-  width: 133px;
-  height: 20px;
+  width: 300px;
+  height: 30px;
   background: url("../images/v341_347.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -3683,8 +3682,8 @@ body {
   overflow: hidden;
 }
 .v341_353 {
-  width: 122px;
-  height: 20px;
+  width: 300px;
+  height: 30px;
   background: url("../images/v341_353.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -4565,25 +4564,34 @@ body {
 .v341_419 {
   width: 18px;
   height: 16px;
-  background: url("../images/v341_419.png");
-  background-repeat: no-repeat;
-  background-position: center center;
+  background: url("../images/v341_419.png") no-repeat center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 22px;
-  left: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   overflow: hidden;
 }
+
 .v341_420 {
   width: 16px;
   height: 16px;
-  background: rgba(184,97,97,1);
+  color: rgba(184,97,97,1);
   opacity: 1;
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 10%;
+  left: 0;              /* si quieres mantenerlo pegado a la izquierda */
+  transform: translateY(-50%);
 }
+
+.v341_420 a {
+  font-size: 22px;  /* 👈 tamaño de la letra, cámbialo según lo que necesites */
+  color: inherit;   /* hereda el color de .v341_420 */
+  text-decoration: none; /* opcional: quita subrayado */
+}
+
+
 .v341_421 {
   width: 555px;
   color: rgba(17,17,17,0.800000011920929);
@@ -4611,7 +4619,7 @@ body {
 }
 .v341_423 {
   width: 122px;
-  height: 20px;
+  height: 30px;
   background: url("../images/v341_423.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -6029,7 +6037,7 @@ body {
   text-align: left;
 }
 .v341_550 {
-  width: 205px;
+  width: 300px;
   height: 80px;
   background: url("../images/v341_550.png");
   background-repeat: no-repeat;
@@ -6042,7 +6050,7 @@ body {
   overflow: hidden;
 }
 .v341_551 {
-  width: 176px;
+  width: 300px;
   height: 24px;
   background: url("../images/v341_551.png");
   background-repeat: no-repeat;
@@ -6091,7 +6099,7 @@ body {
   left: 0px;
 }
 .v341_555 {
-  width: 206px;
+  width: 300px;
   color: rgba(11,26,51,1);
   position: absolute;
   top: 2px;
@@ -6103,7 +6111,7 @@ body {
   text-align: left;
 }
 .v341_556 {
-  width: 165px;
+  width: 300px;
   height: 24px;
   background: url("../images/v341_556.png");
   background-repeat: no-repeat;
@@ -6234,7 +6242,7 @@ body {
 }
 .v341_567 {
   width: 624px;
-  height: 531px;
+  height: 600px;
   background: url("../images/v341_567.png");
   background-repeat: no-repeat;
   background-position: center center;
